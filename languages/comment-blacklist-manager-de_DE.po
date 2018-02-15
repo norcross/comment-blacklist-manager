@@ -1,0 +1,75 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Comment Blacklist Manager v1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-11-03 09:17:37+0000\n"
+"Last-Translator: wpdoc.de <dev@wpdoc.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: comment-blacklist-manager.php:139
+#: comment-blacklist-manager.php:161
+#@ comment-blacklist-manager
+msgid "Blacklist Source"
+msgstr "Blacklist Quelle"
+
+#: comment-blacklist-manager.php:142
+#: comment-blacklist-manager.php:201
+#@ comment-blacklist-manager
+msgid "Local Blacklist"
+msgstr "Lokale Blacklist"
+
+#: comment-blacklist-manager.php:145
+#: comment-blacklist-manager.php:222
+#@ comment-blacklist-manager
+msgid "Excluded Terms"
+msgstr "Ausgenommene Begriffe"
+
+#: comment-blacklist-manager.php:165
+#@ comment-blacklist-manager
+msgid "Data from the sources below will be loaded into the comment blacklist automatically."
+msgstr "Die Daten von den unten angeführten Quellen werden automatisch in die Kommentar-Blacklist geladen."
+
+#: comment-blacklist-manager.php:173
+#@ comment-blacklist-manager
+msgid "No blacklist sources have been defined."
+msgstr "Bisher wurden keine Blacklist-Quellen festgelegt."
+
+#: comment-blacklist-manager.php:180
+#@ comment-blacklist-manager
+msgid "View external source"
+msgstr "Externe Quelle überprüfen"
+
+#: comment-blacklist-manager.php:187
+#@ comment-blacklist-manager
+msgid "Run manual update"
+msgstr "Aktualisierung von Hand starten"
+
+#: comment-blacklist-manager.php:205
+#@ comment-blacklist-manager
+msgid "Any terms entered below will be added to the data retrieved from the blacklist sources. One word or IP per line. It will match inside words, so &#8220;press&#8221; will match &#8220;WordPress&#8221;."
+msgstr "Jeder der unten aufgeführten Begriffe wird zu den Daten aus den Blacklist-Quellen hinzugefügt. Ein Wort oder eine IP pro Zeile. Die Begriffe werden innerhalb von Worten erkannt: &#8220;press&#8221; findet auch &#8220;WordPress&#8221;."
+
+#: comment-blacklist-manager.php:226
+#@ comment-blacklist-manager
+msgid "Any terms entered below will be excluded from the blacklist updates. One word or IP per line. It will match inside words, so &#8220;press&#8221; will match &#8220;WordPress&#8221;."
+msgstr "Jeder der unten aufgeführten Begriffe wird aus den Blacklist-Aktualisierungen ausgenommen. Ein Wort oder eine IP pro Zeile. Die Begriffe werden innerhalb von Worten erkannt: &#8220;press&#8221; findet auch &#8220;WordPress&#8221;."
+
+#: comment-blacklist-manager.php:296
+#@ comment-blacklist-manager
+msgid "Blacklist terms were updated successfully."
+msgstr "Die Begriffe in der Blacklist wurden erfolgreich aktualisiert."
+

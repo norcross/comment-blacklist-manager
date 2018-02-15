@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: comment-blacklist-manager\n"
+"POT-Creation-Date: 2014-05-20 18:52-0500\n"
+"PO-Revision-Date: 2014-05-20 18:52-0500\n"
+"Last-Translator: Andrew Norcross <andrew@andrewnorcross.com>\n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: _;__;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: comment-blacklist-manager.php:139 comment-blacklist-manager.php:161
+msgid "Blacklist Source"
+msgstr "Blacklist Source"
+
+#: comment-blacklist-manager.php:142 comment-blacklist-manager.php:201
+msgid "Local Blacklist"
+msgstr "Local Blacklist"
+
+#: comment-blacklist-manager.php:145 comment-blacklist-manager.php:222
+msgid "Excluded Terms"
+msgstr "Excluded Terms"
+
+#: comment-blacklist-manager.php:165
+msgid ""
+"Data from the sources below will be loaded into the comment blacklist "
+"automatically."
+msgstr ""
+"Data from the sources below will be loaded into the comment blacklist "
+"automatically."
+
+#: comment-blacklist-manager.php:173
+msgid "No blacklist sources have been defined."
+msgstr "No blacklist sources have been defined."
+
+#: comment-blacklist-manager.php:180
+msgid "View external source"
+msgstr "View external source"
+
+#: comment-blacklist-manager.php:187
+msgid "Run manual update"
+msgstr "Run manual update"
+
+#: comment-blacklist-manager.php:205
+msgid ""
+"Any terms entered below will be added to the data retrieved from the "
+"blacklist sources. One word or IP per line. It will match inside words, so "
+"&#8220;press&#8221; will match &#8220;WordPress&#8221;."
+msgstr ""
+"Any terms entered below will be added to the data retrieved from the "
+"blacklist sources. One word or IP per line. It will match inside words, so "
+"&#8220;press&#8221; will match &#8220;WordPress&#8221;."
+
+#: comment-blacklist-manager.php:226
+msgid ""
+"Any terms entered below will be excluded from the blacklist updates. One "
+"word or IP per line. It will match inside words, so &#8220;press&#8221; will "
+"match &#8220;WordPress&#8221;."
+msgstr ""
+"Any terms entered below will be excluded from the blacklist updates. One "
+"word or IP per line. It will match inside words, so &#8220;press&#8221; will "
+"match &#8220;WordPress&#8221;."
+
+#: comment-blacklist-manager.php:296
+msgid "Blacklist terms were updated successfully."
+msgstr "Blacklist terms were updated successfully."
