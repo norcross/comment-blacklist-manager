@@ -6,6 +6,7 @@ Donate link: http://andrewnorcross.com/donate
 Requires at least: 3.7
 Tested up to: 5.3.2
 Stable tag: 1.0.0
+Requires PHP: 5.2.4
 License: MIT
 License URI: https://norcross.mit-license.org/
 
@@ -92,6 +93,4 @@ The return should be provided using the [time constants in transients](https://c
 == Upgrade Notice ==
 
 = 1.0.0 =
-Initial release
-
-
+* Initial release
