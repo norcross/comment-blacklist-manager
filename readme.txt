@@ -7,7 +7,7 @@ Requires at least: 3.7
 Tested up to: 4.9
 Stable tag: 1.0.0
 License: MIT
-License URI: http://norcross.mit-license.org/
+License URI: https://norcross.mit-license.org/
 
 Remotely add known terms into the WordPress blacklist keys to manage spam
 
@@ -15,7 +15,7 @@ Remotely add known terms into the WordPress blacklist keys to manage spam
 
 Comment Blacklist Manager will retrieve a list of blacklist terms from a remote source and update the `blacklist_keys` setting in WordPress. The list will update itself on a schedule to keep your terms current. Any manually added items will be retained, and an exclusions list is also created if there are terms from the source you want to allow.
 
-The default data for the list is fetched from [GitHub](https://github.com/splorp/wordpress-comment-blacklist/ "GitHub") and is managed by [Grant Hutchinson](http://www.splorp.com/ "Grant Hutchinson"). The source can be changed based using available filters.
+The default data for the list is fetched from [GitHub](https://github.com/splorp/wordpress-comment-blacklist/ "GitHub") and is managed by [Grant Hutchinson](https://splorp.com/ "Grant Hutchinson"). The source can be changed based using available filters.
 
 
 == Installation ==
@@ -29,7 +29,7 @@ The default data for the list is fetched from [GitHub](https://github.com/splorp
 
 = What is the default source of the blacklist? =
 
-The list is managed by [Grant Hutchinson](http://www.splorp.com/ "Grant Hutchinson") on [GitHub](https://github.com/splorp/wordpress-comment-blacklist/ "GitHub")
+The list is managed by [Grant Hutchinson](https://splorp.com/ "Grant Hutchinson") on [GitHub](https://github.com/splorp/wordpress-comment-blacklist/ "GitHub")
 
 = Can I provide my own blacklist sources? =
 
@@ -76,7 +76,7 @@ function rkv_cblm_custom_schedule( $time ) {
 
 }`
 
-The return should be provided using the [time contstants in transients](http://codex.wordpress.org/Transients_API#Using_Time_Constants "time contstants in transients")
+The return should be provided using the [time constants in transients](https://codex.wordpress.org/Transients_API#Using_Time_Constants "time constants in transients")
 
 == Screenshots ==
 
