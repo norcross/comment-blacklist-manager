@@ -4,7 +4,7 @@ Tags: comments, spam, blacklist
 Website Link: https://github.com/norcross/comment-blacklist-manager
 Donate link: http://andrewnorcross.com/donate
 Requires at least: 3.7
-Tested up to: 4.9
+Tested up to: 5.3.2
 Stable tag: 1.0.0
 License: MIT
 License URI: https://norcross.mit-license.org/
