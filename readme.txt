@@ -1,12 +1,13 @@
 === Comment Blacklist Manager ===
-Contributors: norcross, grantsplorp, jjeaton, reaktivstudios
+Contributors: norcross, grantsplorp
 Tags: comments, spam, blacklist
+Website Link: https://github.com/norcross/comment-blacklist-manager
 Donate link: http://andrewnorcross.com/donate
 Requires at least: 3.7
 Tested up to: 4.9
 Stable tag: 1.0.0
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: MIT
+License URI: http://norcross.mit-license.org/
 
 Remotely add known terms into the WordPress blacklist keys to manage spam
 
