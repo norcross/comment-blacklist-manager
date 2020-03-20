@@ -81,7 +81,7 @@ The return should be provided using the [time constants in transients](https://c
 
 == Screenshots ==
 
-1. The new exclusions field
+1. The “Discussion Settings” screen showing the various blacklist fields
 
 
 == Changelog ==
