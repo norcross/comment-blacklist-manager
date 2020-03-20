@@ -10,33 +10,44 @@ Requires PHP: 5.2.4
 License: MIT
 License URI: https://norcross.mit-license.org/
 
-Remotely add known terms into the WordPress blacklist keys to manage spam
+Remotely add known terms to the WordPress Comment Blacklist to manage spam.
 
 == Description ==
 
-Comment Blacklist Manager will retrieve a list of blacklist terms from a remote source and update the `blacklist_keys` setting in WordPress. The list will update itself on a schedule to keep your terms current. Any manually added items will be retained, and an exclusions list is also created if there are terms from the source you want to allow.
+Comment Blacklist Manager retrieves a list of terms from a remote source and updates the `blacklist_keys` setting in WordPress. The plugin will automatically fetch a list of terms on a regular schedule and update the contents of the “Comment Blacklist” field. Terms added manually via the “Local Blacklist” field will be retained during the scheduled updates. Terms added manually to the “Excluded Terms” field will be removed from the list.
 
-The default data for the list is fetched from [GitHub](https://github.com/splorp/wordpress-comment-blacklist/ "GitHub") and is managed by [Grant Hutchinson](https://splorp.com/ "Grant Hutchinson"). The source can be changed based using available filters.
-
+The default list of terms is fetched from a [GitHub](https://github.com/splorp/wordpress-comment-blacklist/ "Comment Blacklist for WordPress") repository maintained by [Grant Hutchinson](https://splorp.com/ "Interface considerations. Gadget accumulation. Typography. Scotch.").
 
 == Installation ==
 
-1. Upload the `comment-blacklist-manager` folder to the `/wp-content/plugins/` directory or install from the dashboard
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Add any terms to the exclusions list under the main "Discussions" settings area
-1. Add any additional terms in the new "Local Blacklist" field
+**To install the plugin using the WordPress dashboard:**
+
+1. Go to the “Plugins > Add New” page
+2. Search for “Comment Blacklist Manager”
+3. Click the “Install Now” button
+4. Activate the plugin on the “Plugins” page
+5. (Optional) Add terms to the “Local Blacklist” field in “Settings > Discussion”
+6. (Optional) Add terms to the “Excluded Terms” field in “Settings > Discussion”
+
+**To install the plugin manually:**
+
+1. Download the plugin and decompress the archive
+2. Upload the `comment-blacklist-manager` folder to the `/wp-content/plugins/` directory on the server
+3. Activate the plugin on the “Plugins” page
+4. (Optional) Add terms to the “Local Blacklist” field in “Settings > Discussion”
+5. (Optional) Add terms to the “Excluded Terms” field in “Settings > Discussion”
 
 == Frequently Asked Questions ==
 
-= What is the default source of the blacklist? =
+= What is the source for the default blacklist? =
 
-The list is managed by [Grant Hutchinson](https://splorp.com/ "Grant Hutchinson") on [GitHub](https://github.com/splorp/wordpress-comment-blacklist/ "GitHub")
+The default blacklist is maintained by [Grant Hutchinson](https://splorp.com/ "Interface considerations. Gadget accumulation. Typography. Scotch.") on [GitHub](https://github.com/splorp/wordpress-comment-blacklist/ "Comment Blacklist for WordPress").
 
 = Can I provide my own blacklist sources? =
 
-Sure can. Use the filter `cblm_sources` to add different source URLs.
+Yes, you can. Use the filter `cblm_sources` to add different source URLs.
 
-*to replace the sources completely*
+**To replace the default source completely:**
 `
 add_filter( 'cblm_sources', 'rkv_cblm_replace_blacklist_sources' );
 
@@ -50,24 +61,28 @@ function rkv_cblm_replace_blacklist_sources( $list ) {
 }
 `
 
-*to add a new item to the existing sources*
+**To add a new source to the existing sources:**
 `
 add_filter( 'cblm_sources', 'rkv_cblm_add_blacklist_source' );
 
 function rkv_cblm_add_blacklist_source( $list ) {
 
-	$list[]	= 'http://example.com/blacklist-a.txt';
+	$list[]	= 'http://example.com/blacklist-1.txt';
 
 	return $list;
 
 }
 `
 
-The plugin expects the blacklist data to be a plain text format with each entry on it's own line. If the source is provided in a different format (a JSON feed or serialized array) then you will need to run the result through `cblm_parse_data_result`, which passes through the data and the source URL.
+The plugin expects the list of terms to be in plain text format with each entry on its own line. If the source is provided in a different format (eg: a JSON feed or serialized array), then the result must be run through the `cblm_parse_data_result` filter, which parses the source as a list of terms and the source URL.
+
+= What is the default update schedule? =
+
+The plugin will update the list of terms from the specified sources every 24 hours.
 
 = Can I change the update schedule? =
 
-Yep. Use the filter `cblm_update_schedule` to add a new URL.
+Yes, you can. Use the filter `cblm_update_schedule` to modify the time between updates.
 
 `add_filter( 'cblm_update_schedule', 'rkv_cblm_custom_schedule' );
 
@@ -77,18 +92,24 @@ function rkv_cblm_custom_schedule( $time ) {
 
 }`
 
-The return should be provided using the [time constants in transients](https://codex.wordpress.org/Transients_API#Using_Time_Constants "time constants in transients")
+The `return` data should be specified using WordPress [Transient Time Constants](https://codex.wordpress.org/Transients_API#Using_Time_Constants "Transients API: Using Time Constants").
+
+= Can I add my own terms to the blacklist? =
+
+Yes. Individual terms can be added to the “Local Blacklist” field in the “Settings > Discussion” area of WordPress. Each term must be entered on its own line.
+
+= Can I exclude terms from the blacklist? =
+
+Yes. Individual terms can be excluded from the automatically fetched blacklist by adding them to the “Excluded Terms” field in the “Settings > Discussion” area of WordPress. Each term must be entered on its own line.
 
 == Screenshots ==
 
 1. The “Discussion Settings” screen showing the various blacklist fields
 
-
 == Changelog ==
 
 = 1.0.0 =
 * Initial release
-
 
 == Upgrade Notice ==
 
