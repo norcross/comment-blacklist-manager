@@ -164,7 +164,7 @@ class CBL_Manager_Core
 		// loop through the sources and display a list with icon to view
 		foreach( (array) $sources as $source ) {
 
-			echo '<li><a class="imgedit-help-toggle" href="' . esc_url( $source ) . '" title="' . __( 'View external source', 'comment-blacklist-manager' ) . '" target="_blank"><span class="dashicons dashicons-external"></span></a>&nbsp;' . esc_url( $source ) . '</li>';
+			echo '<li class="widefat"><a href="' . esc_url( $source ) . '" title="' . __( 'View external source', 'comment-blacklist-manager' ) . '" target="_blank"><span class="dashicons dashicons-external"></span></a>&nbsp;' . esc_url( $source ) . '</li>';
 
 		}
 
