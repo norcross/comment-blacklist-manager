@@ -3,7 +3,7 @@
  * Plugin Name: Comment Blacklist Manager
  * Plugin URI:  https://github.com/norcross/comment-blacklist-manager
  * Description: Add known terms into the WordPress blacklist keys to manage spam
- * Version:     1.0.1
+ * Version:     1.0.2-dev
  * Author:      Andrew Norcross
  * Author URI:  http://andrewnorcross.com
  * Text Domain: comment-blacklist-manager
@@ -21,7 +21,7 @@ if( ! defined( 'CBL_MANAGER_DIR' ) ) {
 }
 
 if( ! defined( 'CBL_MANAGER_VER' ) ) {
-	define( 'CBL_MANAGER_VER', '1.0.1' );
+	define( 'CBL_MANAGER_VER', '1.0.2-dev' );
 }
 
 
