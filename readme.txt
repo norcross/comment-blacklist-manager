@@ -5,7 +5,7 @@ Website Link: https://github.com/norcross/comment-blacklist-manager
 Donate link: http://andrewnorcross.com/donate
 Requires at least: 3.7
 Tested up to: 5.3.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 5.2.4
 License: MIT
 License URI: https://norcross.mit-license.org/
@@ -108,10 +108,14 @@ Yes. Individual terms can be excluded from the automatically fetched blacklist b
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.0.1 - 2020/03/23
+* updating admin notice display to properly clear when manual update is run
+* minor code cleanup
+
+= 1.0.0
 * Initial release
 
 == Upgrade Notice ==
 
-= 1.0.0 =
+= 1.0.0
 * Initial release
