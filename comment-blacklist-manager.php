@@ -44,7 +44,7 @@ class CBL_Manager_Core
 		add_action		(	'admin_init',						array(	$this,	'update_blacklist_admin'		)			);
 		add_action		(	'admin_init',						array(	$this,	'update_blacklist_manual'		)			);
 		add_action		(	'admin_notices',					array(	$this,	'manual_update_notice'			)			);
-
+		add_filter		(	'removable_query_args',				array(	$this,	'add_removable_args'			)			);
 		register_activation_hook	(	__FILE__,				array(	$this,	'run_initial_process'			)			);
 		register_deactivation_hook	(	__FILE__,				array(	$this,	'remove_settings'				)			);
 	}
@@ -164,7 +164,7 @@ class CBL_Manager_Core
 		// loop through the sources and display a list with icon to view
 		foreach( (array) $sources as $source ) {
 
-			echo '<li><a class="imgedit-help-toggle" href="' . esc_url( $source ) . '" title="' . __( 'View external source', 'comment-blacklist-manager' ) . '" target="_blank"><span class="dashicons dashicons-external"></span></a>&nbsp;' . esc_url( $source ) . '</li>';
+			echo '<li class="widefat"><a href="' . esc_url( $source ) . '" title="' . __( 'View external source', 'comment-blacklist-manager' ) . '" target="_blank"><span class="dashicons dashicons-external"></span></a>&nbsp;' . esc_url( $source ) . '</li>';
 
 		}
 
@@ -260,7 +260,7 @@ class CBL_Manager_Core
 		self::blacklist_process_loader();
 
 		// set a query string to redirect to
-		$redirect	= admin_url( 'options-discussion.php' ) . '?cblm-update=success';
+		$redirect	= add_query_arg( array( 'cblm-update' => 'success' ), admin_url( 'options-discussion.php' ) );
 
 		wp_redirect( $redirect );
 		exit();
@@ -275,16 +275,32 @@ class CBL_Manager_Core
 	public function manual_update_notice() {
 
 		// check for our query string
-		if ( ! isset( $_REQUEST['cblm-update'] ) || isset( $_REQUEST['cblm-update'] ) && $_REQUEST['cblm-update'] !== 'success' ) {
+		if ( ! isset( $_GET['cblm-update'] ) || sanitize_text_field( $_GET['cblm-update'] ) !== 'success' ) {
 			return;
 		}
 
-		echo '<div id="setting-error-settings_updated" class="updated settings-error">';
+		// Output the actual markup for the message.
+		echo '<div class="notice notice-success is-dismissible">';
 			echo '<p><strong>' . __( 'Blacklist terms were updated successfully.', 'comment-blacklist-manager' ) . '</strong></p>';
 		echo '</div>';
 
 	}
 
+	/**
+	 * Add our custom strings to the vars.
+	 *
+	 * @param  array $args  The existing array of args.
+	 *
+	 * @return array $args  The modified array of args.
+	 */
+	public function add_removable_args( $args ) {
+
+		// Set the default args, passing along a filter.
+		$set_removable_args = apply_filters( 'cblm_removable_args', array( 'cblm-update' ) );
+
+		// Include my new args and return.
+		return wp_parse_args( $set_removable_args, $args );
+	}
 
 	/**
 	 * our actual updating function. is done in 3 parts
