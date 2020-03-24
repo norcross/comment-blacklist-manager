@@ -58,8 +58,7 @@ function rkv_cblm_replace_blacklist_sources( $list ) {
 		'http://example.com/blacklist-2.txt'
 	);
 
-}
-`
+}`
 
 **To add a new source to the existing sources:**
 `
@@ -71,8 +70,7 @@ function rkv_cblm_add_blacklist_source( $list ) {
 
 	return $list;
 
-}
-`
+}`
 
 The plugin expects the list of terms to be in plain text format with each entry on its own line. If the source is provided in a different format (eg: a JSON feed or serialized array), then the result must be run through the `cblm_parse_data_result` filter, which parses the source as a list of terms and the source URL.
 
@@ -108,17 +106,12 @@ Yes. Individual terms can be excluded from the automatically fetched blacklist b
 
 == Changelog ==
 
-= 1.0.2 - 2020/XX/XX
+= 1.0.2 — 2020/XX/XX =
 * TBD
 
-= 1.0.1 - 2020/03/23
-* updating admin notice display to properly clear when manual update is run
-* minor code cleanup
+= 1.0.1 — 2020/03/23 =
+* Fixed admin notice to properly clear when a manual update is run
+* Minor code cleanup
 
-= 1.0.0
-* Initial release
-
-== Upgrade Notice ==
-
-= 1.0.0
+= 1.0.0 =
 * Initial release
