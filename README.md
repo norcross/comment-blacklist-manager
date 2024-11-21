@@ -1,17 +1,15 @@
 Comment Blacklist Manager
 ========================
 
+Remotely add known terms to the WordPress Comment Blacklist to manage spam.
+
 ## Contributors
 * [Andrew Norcross](https://github.com/norcross)
 * [Grant Hutchinson](https://github.com/splorp)
 
 ## About
 
-Remotely add known terms to the WordPress Comment Blacklist to manage spam.
-
-## Features
-
-Comment Blacklist Manager retrieves a list of terms from a remote source and updates the `blacklist_keys` setting in WordPress. The plugin will automatically fetch a list of terms on a regular schedule and update the contents of the “Comment Blacklist” field. Terms added manually via the “Local Blacklist” field will be retained during the scheduled updates. Terms added manually to the “Excluded Terms” field will be removed from the list.
+Comment Blacklist Manager retrieves a list of terms from a remote source and updates the `blacklist_keys` setting in WordPress. The plugin will automatically fetch a list of terms on a regular schedule and update the contents of the “Comment Blacklist” field. Terms added manually via the “Local Blacklist” field will be retained during the scheduled updates. Terms added manually to the “Excluded Terms” field will be removed from the list.
 
 The default list of terms is fetched from a [GitHub](https://github.com/splorp/wordpress-comment-blacklist/ "Comment Blacklist for WordPress") repository maintained by [Grant Hutchinson](https://splorp.com/ "Interface considerations. Gadget accumulation. Typography. Scotch.").
 
@@ -25,6 +23,7 @@ The default blacklist is maintained by [Grant Hutchinson](https://splorp.com/ "I
 
 Yes, you can. Use the filter `cblm_sources` to add different source URLs.
 
+Replacing the existing array of source URLs.
 ~~~php
 /**
  * Replace the existing source file with our own.
@@ -34,11 +33,15 @@ Yes, you can. Use the filter `cblm_sources` to add different source URLs.
  * @return array           Our new one.
  */
 function prefix_replace_blacklist_sources( $sources ) {
-	return ['https://example.com/some-source.txt'];
+	return [
+		'https://example.com/blacklist-source-1.txt',
+		'https://example.com/blacklist-source-2.txt'
+	];
 }
 add_filter( 'cblm_sources', 'prefix_replace_blacklist_sources' );
 ~~~
 
+Adding to the existing array of source URLs.
 ~~~php
 /**
  * Add to the existing source files.
@@ -49,7 +52,7 @@ add_filter( 'cblm_sources', 'prefix_replace_blacklist_sources' );
  */
 function prefix_amend_blacklist_sources( $sources ) {
 
-	$sources[]	= 'http://example.com/blacklist-1.txt';
+	$sources[] = 'https://example.com/blacklist-source.txt';
 
 	return $sources;
 }
