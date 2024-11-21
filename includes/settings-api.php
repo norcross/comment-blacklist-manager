@@ -154,19 +154,6 @@ function load_comment_settings() {
 	// Add out checkbox with a sanitiation callback.
 	register_setting( 'discussion', Core\OPTION_PREFIX . 'exclude', $excld_args );
 
-	// Load the sources field.
-	add_settings_field(
-		'blacklist-source',
-		__( 'Blacklist Source', 'comment-blacklist-manager' ),
-		__NAMESPACE__ . '\source_field',
-		'discussion',
-		'default',
-		[
-			'class'   => 'blacklist-source-field-wrapper',
-			'dataset' => Helpers\get_blacklist_sources(),
-		]
-	);
-
 	// Load the local terms field.
 	add_settings_field(
 		'blacklist-local',
@@ -190,6 +177,19 @@ function load_comment_settings() {
 		[
 			'class'   => 'blacklist-exclude-field-wrapper',
 			'dataset' => Helpers\get_blacklist_setting( 'exclude' ),
+		]
+	);
+
+	// Load the sources field.
+	add_settings_field(
+		'blacklist-source',
+		__( 'Blacklist Source', 'comment-blacklist-manager' ),
+		__NAMESPACE__ . '\source_field',
+		'discussion',
+		'default',
+		[
+			'class'   => 'blacklist-source-field-wrapper',
+			'dataset' => Helpers\get_blacklist_sources(),
 		]
 	);
 }
@@ -256,7 +256,7 @@ function source_field( $args ) {
 	echo '<p>';
 
 		// Do the actual button.
-		echo '<a class="button button-secondary" href="' . esc_url( $get_manual_update_link ) . '">' . esc_html__( 'Run manual update', 'comment-blacklist-manager' ) . '</a>';
+		echo '<a class="button button-secondary" href="' . esc_url( $get_manual_update_link ) . '">' . esc_html__( 'Run Manual Update', 'comment-blacklist-manager' ) . '</a>';
 
 	// Close the wrapper for the button.
 	echo '</p>';
