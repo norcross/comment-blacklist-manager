@@ -205,14 +205,14 @@ function source_field( $args ) {
 
 	// Set the legend field.
 	echo '<legend class="screen-reader-text">';
-		echo '<span>' . __( 'Blacklist Sources', 'comment-blacklist-manager' ) . '</span>';
+		echo '<span>' . esc_html__( 'Blacklist Sources', 'comment-blacklist-manager' ) . '</span>';
 	echo '</legend>';
 
 	// Show a quick message if no sources exist.
 	if ( empty( $args['dataset'] ) ) {
 
 		// Show the paragraph text.
-		echo '<p class="description">' . __( 'No blacklist sources have been defined.', 'comment-blacklist-manager' ) . '</p>';
+		echo '<p class="description">' . esc_html__( 'No blacklist sources have been defined.', 'comment-blacklist-manager' ) . '</p>';
 
 		// And done.
 		return;
@@ -228,7 +228,7 @@ function source_field( $args ) {
 	$get_manual_update_link = Helpers\fetch_settings_url( $set_manual_update_args );
 
 	// Show our label.
-	echo '<p>' . __( 'Data from the sources below will be loaded into the comment blacklist automatically.', 'comment-blacklist-manager' ) . '</p>';
+	echo '<p>' . esc_html__( 'Data from the sources below will be loaded into the comment blacklist automatically.', 'comment-blacklist-manager' ) . '</p>';
 
 	// Begin the code list.
 	echo '<ul class="cblm-inline-list">';
@@ -240,7 +240,7 @@ function source_field( $args ) {
 		echo '<li class="cblm-inline-list-item widefat">';
 
 			// Show a button to view it.
-			echo '<a href="' . esc_url( $source_url ) . '" title="' . __( 'View external source', 'comment-blacklist-manager' ) . '" target="_blank"><span class="dashicons dashicons-external"></span></a>';
+			echo '<a href="' . esc_url( $source_url ) . '" title="' . esc_attr__( 'View external source', 'comment-blacklist-manager' ) . '" target="_blank"><span class="dashicons dashicons-external"></span></a>';
 
 			// Show the actual link.
 			echo '<code>' . esc_url( $source_url ) . '</code>';
@@ -256,7 +256,7 @@ function source_field( $args ) {
 	echo '<p>';
 
 		// Do the actual button.
-		echo '<a class="button button-secondary" href="' . esc_url( $get_manual_update_link ) . '">' . __( 'Run manual update', 'comment-blacklist-manager' ) . '</a>';
+		echo '<a class="button button-secondary" href="' . esc_url( $get_manual_update_link ) . '">' . esc_html__( 'Run manual update', 'comment-blacklist-manager' ) . '</a>';
 
 	// Close the wrapper for the button.
 	echo '</p>';
@@ -273,12 +273,12 @@ function local_field( $args ) {
 
 	// Set the legend field.
 	echo '<legend class="screen-reader-text">';
-		echo '<span>' . __( 'Local Blacklist Terms', 'comment-blacklist-manager' ) . '</span>';
+		echo '<span>' . esc_html__( 'Local Blacklist Terms', 'comment-blacklist-manager' ) . '</span>';
 	echo '</legend>';
 
 	// Show the explanation.
 	echo '<p>';
-		echo '<label for="blacklist_local">' . __( 'Any terms entered below will be added to the data retrieved from the blacklist sources. One word or IP per line. It will match inside words, so &#8220;press&#8221; will match &#8220;WordPress&#8221;.', 'comment-blacklist-manager' ) . '</label>';
+		echo '<label for="blacklist_local">' . esc_html__( 'Any terms entered below will be added to the data retrieved from the blacklist sources. One word or IP per line. It will match inside words, so &#8220;press&#8221; will match &#8220;WordPress&#8221;.', 'comment-blacklist-manager' ) . '</label>';
 	echo '</p>';
 
 	// And the actual field.
@@ -298,12 +298,12 @@ function exclude_field( $args ) {
 
 	// Set the legend field.
 	echo '<legend class="screen-reader-text">';
-		echo '<span>' . __( 'Excluded Terms', 'comment-blacklist-manager' ) . '</span>';
+		echo '<span>' . esc_html__( 'Excluded Terms', 'comment-blacklist-manager' ) . '</span>';
 	echo '</legend>';
 
 	// Show the explanation.
 	echo '<p>';
-		echo '<label for="blacklist_exclude">' . __( 'Any terms entered below will be excluded from the blacklist updates. One word or IP per line. It will match inside words, so &#8220;press&#8221; will match &#8220;WordPress&#8221;.', 'comment-blacklist-manager' ) . '</label>';
+		echo '<label for="blacklist_exclude">' . esc_html__( 'Any terms entered below will be excluded from the blacklist updates. One word or IP per line. It will match inside words, so &#8220;press&#8221; will match &#8220;WordPress&#8221;.', 'comment-blacklist-manager' ) . '</label>';
 	echo '</p>';
 
 	// And the actual field.
