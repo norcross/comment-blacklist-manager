@@ -69,7 +69,7 @@ Currently set to 1 week. However, that can be changed with the `cblm_update_sche
 
 ~~~php
 /**
- * Set the update time to one day.
+ * Set the update time to one day using a WP constant.
  *
  * @param  integer $duration  The currently set duration.
  *
@@ -77,6 +77,20 @@ Currently set to 1 week. However, that can be changed with the `cblm_update_sche
  */
 function prefix_change_update_duration( $duration ) {
 	return DAY_IN_SECONDS;
+}
+add_filter( 'cblm_update_schedule', 'prefix_change_update_duration' );
+~~~
+
+~~~php
+/**
+ * Set the update time to one day using an integer.
+ *
+ * @param  integer $duration  The currently set duration.
+ *
+ * @return integer            Our new one.
+ */
+function prefix_change_update_duration( $duration ) {
+	return 86400;
 }
 add_filter( 'cblm_update_schedule', 'prefix_change_update_duration' );
 ~~~

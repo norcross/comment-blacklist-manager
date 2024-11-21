@@ -44,7 +44,6 @@ define( __NAMESPACE__ . '\OPTION_PREFIX', 'blacklist_' );
 // Define the default blacklist source.
 define( __NAMESPACE__ . '\LIST_SRC', 'https://raw.githubusercontent.com/splorp/wordpress-comment-blacklist/master/blacklist.txt' );
 
-
 // Go and load our files.
 require_once __DIR__ . '/includes/data-calls.php';
 require_once __DIR__ . '/includes/helpers.php';
