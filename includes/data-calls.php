@@ -38,9 +38,9 @@ function fetch_data_from_source( $source = '' ) {
 
 	// Make my data request.
 	if ( function_exists( 'vip_safe_wp_remote_get' ) ) {
-		$fetch_api_data = vip_safe_wp_remote_get( $source, '', 3, 5, 20, $setup_api_args );
+		$fetch_api_data = vip_safe_wp_remote_get( esc_url( $source ), '', 3, 5, 20, $setup_api_args );
 	} else {
-		$fetch_api_data = wp_remote_get( $source, $setup_api_args ); // phpcs:ignore -- this is fallback for non-VIP.
+		$fetch_api_data = wp_remote_get( esc_url( $source ), $setup_api_args ); // phpcs:ignore -- this is fallback for non-VIP.
 	}
 
 	// First check for a WP_Error return since that gives us a message.

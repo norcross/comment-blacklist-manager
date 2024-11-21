@@ -12,6 +12,25 @@ namespace Norcross\CommentBlacklistManager\Helpers;
 use Norcross\CommentBlacklistManager as Core;
 
 /**
+ * Check to see if we need to run an update.
+ *
+ * @return boolean
+ */
+function maybe_run_update() {
+
+	// Check for the option.
+	$next_to_update = get_option( Core\OPTION_PREFIX . 'next_update', 0 );
+
+	// If no stamp exists, it's time to run.
+	if ( empty( $next_to_update ) ) {
+		return true;
+	}
+
+	// Compare the time and return.
+	return time() > absint( $next_to_update ) ? true : false;
+}
+
+/**
  * Get the default source for the blacklist data, with a filter.
  *
  * @return array  The array of sources for the blacklist.
@@ -23,6 +42,31 @@ function get_blacklist_sources() {
 
 	// Return the source array.
 	return apply_filters( Core\HOOK_PREFIX . 'sources', $default_source );
+}
+
+/**
+ * Get one of our settings.
+ *
+ * @param  string $setting_key  The setting key we wanna get.
+ *
+ * @return mixed
+ */
+function get_blacklist_setting( $setting_key = '' ) {
+
+	// Define the larger option key.
+	$set_option_key = 'keys' === $setting_key ? 'disallowed_keys' : Core\OPTION_PREFIX . $setting_key;
+
+	// Return the option.
+	return get_option( $set_option_key, '' );
+}
+
+/**
+ * Get the duration for the updates.
+ *
+ * @return integer
+ */
+function get_update_duration() {
+	return apply_filters( Core\HOOK_PREFIX . 'update_schedule', WEEK_IN_SECONDS );
 }
 
 /**
@@ -44,9 +88,8 @@ function fetch_settings_url( $args = [] ) {
 }
 
 /**
- * Runs through the list data and makes sure the line breaks are done
- * properly, which is due to how Windows servers store stuff. then
- * explodes it into an array for various comparison functions later.
+ * Runs through the list data and makes sure the line breaks are done properly, which is due to how
+ * Windows servers store stuff. Then explodes it into an array for various comparison functions later.
  *
  * @param  string $text  The actual data we wanna clean.
  *
@@ -67,13 +110,17 @@ function clean_source_data( $text = '' ) {
 }
 
 /**
- * Compare two arrays and remove any matching elements.
+ * Take our array of data and return a broken list.
  *
- * @param  array $source   The source array.
- * @param  array $compare  The array to run the comparison against.
+ * @param  array  $data  The array of data we have.
  *
- * @return array
+ * @return string
  */
-function datalist_compare( $source = [], $compare = [] ) {
-	return array_diff( $source, $compare );
+function format_list_structure( $data = [] ) {
+
+	// Filter our uniques.
+	$do_unique_keys = array_unique( $data );
+
+	// Implode it back to a list and return it.
+	return implode( "\n", $do_unique_keys );
 }
