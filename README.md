@@ -1,5 +1,5 @@
 Comment Blacklist Manager
-========================
+=========================
 
 Remotely add known terms to the WordPress Comment Blacklist to manage spam.
 
@@ -9,7 +9,7 @@ Remotely add known terms to the WordPress Comment Blacklist to manage spam.
 
 ## About
 
-Comment Blacklist Manager retrieves a list of terms from a remote source and updates the `blacklist_keys` setting in WordPress. The plugin will automatically fetch a list of terms on a regular schedule and update the contents of the “Comment Blacklist” field. Terms added manually via the “Local Blacklist” field will be retained during the scheduled updates. Terms added manually to the “Excluded Terms” field will be removed from the list.
+Comment Blacklist Manager retrieves a list of terms from a remote source and updates the `disallowed_keys` setting (formerly the `blacklist_keys` setting) in WordPress. The plugin will automatically fetch a list of terms on a regular schedule and update the contents of the "Comment Blacklist" field. Terms added manually via the "Local Blacklist" field will be retained during the scheduled updates. Terms added manually to the "Excluded Terms" field will be removed from the list.
 
 The default list of terms is fetched from a [GitHub](https://github.com/splorp/wordpress-comment-blacklist/ "Comment Blacklist for WordPress") repository maintained by [Grant Hutchinson](https://splorp.com/ "Interface considerations. Gadget accumulation. Typography. Scotch.").
 
@@ -97,8 +97,8 @@ add_filter( 'cblm_update_schedule', 'prefix_change_update_duration' );
 
 #### Can I add my own terms to the blacklist?
 
-Yes. Individual terms can be added to the “Local Blacklist” field in the “Settings > Discussion” area of WordPress. Each term must be entered on its own line.
+Yes. Individual terms can be added to the "Local Blacklist" field in the "Settings > Discussion" area of WordPress. Each term must be entered on its own line.
 
 #### Can I exclude terms from the blacklist?
 
-Yes. Individual terms can be excluded from the automatically fetched blacklist by adding them to the “Excluded Terms” field in the “Settings > Discussion” area of WordPress. Each term must be entered on its own line.
+Yes. Individual terms can be excluded from the automatically fetched blacklist by adding them to the "Excluded Terms" field in the "Settings > Discussion" area of WordPress. Each term must be entered on its own line.
