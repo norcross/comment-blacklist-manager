@@ -21,7 +21,7 @@ The default blacklist is maintained by [Grant Hutchinson](https://splorp.com/ "I
 
 #### Can I provide my own blacklist sources?
 
-Yes, you can. Use the filter `cblm_sources` to add different source URLs.
+Yes, you can. Use the `cblm_sources` filter to add different source URLs.
 
 Replacing the existing array of source URLs.
 ~~~php
