@@ -3,10 +3,10 @@ Contributors: norcross, grantsplorp
 Tags: comments, spam, blacklist
 Website Link: https://github.com/norcross/comment-blacklist-manager
 Donate link: http://andrewnorcross.com/donate
-Requires at least: 3.7
+Requires at least: 5.6
 Tested up to: 6.7.2
 Stable tag: 1.0.2-dev
-Requires PHP: 5.2.4
+Requires PHP: 7.0
 License: MIT
 License URI: https://norcross.mit-license.org/
 
