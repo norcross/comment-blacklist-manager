@@ -4,7 +4,7 @@ Tags: comments, spam, blacklist
 Website Link: https://github.com/norcross/comment-blacklist-manager
 Donate link: http://andrewnorcross.com/donate
 Requires at least: 3.7
-Tested up to: 5.3.2
+Tested up to: 6.7.2
 Stable tag: 1.0.2-dev
 Requires PHP: 5.2.4
 License: MIT
@@ -106,10 +106,10 @@ Yes. Individual terms can be excluded from the automatically fetched blacklist b
 
 == Changelog ==
 
-= 1.0.2 — 2020/XX/XX =
+= 1.0.2 =
 * TBD
 
-= 1.0.1 — 2020/03/23 =
+= 1.0.1 — 23-Mar-2020 =
 * Fixed admin notice to properly clear when a manual update is run
 * Minor code cleanup
 
