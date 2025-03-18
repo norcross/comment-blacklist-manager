@@ -336,6 +336,7 @@ class CBL_Manager_Core
 		update_option( 'blacklist_keys', $list );
 
 		// set our transient
+		// 60*60*24 = 86,400 seconds = 1 day
 		set_transient( 'blacklist_update_process', 1, apply_filters( 'cblm_update_schedule', 60*60*24 ) );
 
 		// and get out

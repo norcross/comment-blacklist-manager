@@ -43,6 +43,10 @@ The default list of terms is fetched from a [GitHub](https://github.com/splorp/w
 
 The default blacklist is maintained by [Grant Hutchinson](https://splorp.com/ "Interface considerations. Gadget accumulation. Typography. Scotch.") on [GitHub](https://github.com/splorp/wordpress-comment-blacklist/ "Comment Blacklist for WordPress").
 
+= How often is the default blacklist updated? =
+
+Generally, the default blacklist is updated several times per month. This includes the addition of new entries and the optimizing of existing entries. Sometimes the default blacklist can undergo multiple updates per week, depending on how much spam in being sent to public WordPress sites we use to test the plugin.
+
 = Can I provide my own blacklist sources? =
 
 Yes, you can. Use the filter `cblm_sources` to add different source URLs.
