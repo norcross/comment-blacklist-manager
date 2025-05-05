@@ -4,17 +4,17 @@ Tags: comments, spam, blacklist
 Website Link: https://github.com/norcross/comment-blacklist-manager
 Donate link: http://andrewnorcross.com/donate
 Requires at least: 5.6
-Tested up to: 6.7.2
+Tested up to: 6.8.1
 Stable tag: 1.0.2-dev
 Requires PHP: 7.0
 License: MIT
 License URI: https://norcross.mit-license.org/
 
-Remotely add known terms to the WordPress Comment Blacklist to manage spam.
+Remotely add terms to the WordPress Disallowed Comment Keys field to manage spam.
 
 == Description ==
 
-Comment Blacklist Manager retrieves a list of terms from a remote source and updates the `blacklist_keys` setting in WordPress. The plugin will automatically fetch a list of terms on a regular schedule and update the contents of the “Comment Blacklist” field. Terms added manually via the “Local Blacklist” field will be retained during the scheduled updates. Terms added manually to the “Excluded Terms” field will be removed from the list.
+Comment Blacklist Manager retrieves a list of terms from a remote source and updates the `disallowed_keys` setting in WordPress. The plugin will automatically fetch a list of terms on a regular schedule and update the contents of the “Disallowed Comment Keys” field. Terms added manually via the “Local Blacklist” field will be retained during the scheduled updates. Terms added manually to the “Excluded Terms” field will be removed from the list.
 
 The default list of terms is fetched from a [GitHub](https://github.com/splorp/wordpress-comment-blacklist/ "Comment Blacklist for WordPress") repository maintained by [Grant Hutchinson](https://splorp.com/ "Interface considerations. Gadget accumulation. Typography. Scotch.").
 

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Comment Blacklist Manager
  * Plugin URI:  https://github.com/norcross/comment-blacklist-manager
- * Description: Add known terms into the WordPress blacklist keys to manage spam
+ * Description: Remotely add terms into the Disallowed Comment Keys field to manage spam
  * Version:     1.0.2-dev
  * Author:      Andrew Norcross
  * Author URI:  http://andrewnorcross.com
